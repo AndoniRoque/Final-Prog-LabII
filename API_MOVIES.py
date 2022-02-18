@@ -136,4 +136,26 @@ def delete_movie(id):
         return jsonify({}), HTTPStatus.BAD_REQUEST
 
 
+@app.route("/movies", methods=["PUT"])
+def what():
+    return jsonify({})
+
+
+@app.route("/directors", methods=["GET"])
+def return_directors():
+    dir = []
+    for directors in movies:
+        dir.append(directors["Director"])
+    return jsonify(dir), HTTPStatus.OK
+
+
+@app.route("/genres", methods=["GET"])
+def return_genres():
+    gr = []
+    for genres in movies:
+        if genres["Genre"] not in gr:
+            gr.append(genres["Genre"])
+    return jsonify(gr), HTTPStatus.OK
+
+
 app.run()
