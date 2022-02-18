@@ -1,5 +1,7 @@
 :root{
     --color--background: rgb(13, 100, 107);
+    --color--headbackground: rgb(255, 210, 181);
+    --color--borders: rgb(62, 72, 64)
 }
 
 #cuerpo {
@@ -8,8 +10,9 @@
 }
 
 .encabezado {
-    background-color: rgb(186, 142, 115);
+    background-color: var(--color--headbackground);
     height: 100px;
+    border-bottom: solid 5px var(--color--borders);
 }
 
 #main {
@@ -30,3 +33,4 @@
     width: 400px;
     height: 250px;   
 }
+
