@@ -87,6 +87,7 @@ movies = [
 
 ]
 
+
 @app.route("/",methods=["GET"])
 def front_page():
     return "Main Site"
@@ -103,16 +104,20 @@ def return_title(Title):
     return jsonify({}), HTTPStatus.NOT_FOUND
 
 @app.route("/movies", methods=["POST"])
-def crear_pelicula():
+def create_movie():
     # recibir datos por parte del usuario
     new_movie = request.get_json()
+    last_id = [x['id'] for x in movies]
+    new_id = max(last_id) + 1
+
     if "Title" and "Year" and "Director" and "Genre" and "Synopsis" in new_movie:
         movies.append({
             "Title" : new_movie["Title"],
             "Year" : new_movie["Year"],
             "Director": new_movie["Director"],
             "Genre": new_movie["Genre"],
-            "Synopsis": new_movie["Synopsis"]
+            "Synopsis": new_movie["Synopsis"],
+            "id": new_id
         })
         return jsonify({}), HTTPStatus.OK
     else:
@@ -136,11 +141,6 @@ def delete_movie(id):
         return jsonify({}), HTTPStatus.BAD_REQUEST
 
 
-@app.route("/movies", methods=["PUT"])
-def what():
-    return jsonify({})
-
-
 @app.route("/directors", methods=["GET"])
 def return_directors():
     dir = []
@@ -156,6 +156,27 @@ def return_genres():
         if genres["Genre"] not in gr:
             gr.append(genres["Genre"])
     return jsonify(gr), HTTPStatus.OK
+
+
+@app.route("/movies/edit/<id>", methods=["PUT"])
+def edit_info(id):
+    info = request.get_json()
+    pos = int(id)
+
+    if info is None:
+        return jsonify({"ERROR": 'Json not found'}), HTTPStatus.BAD_REQUEST
+    else:
+        movies[pos] = {
+            "Title": info["Title"],
+            "Year": info["Year"],
+            "Director": info["Director"],
+            "Genre": info["Genre"],
+            "Synopsis": info["Synopsis"],
+            "id": pos
+        }
+        return jsonify({}), HTTPStatus.OK
+# Para este metodo queda agregar algunas excepciones como verificar que el elemento a editar exista por ejemplo
+# y queda encontrar una forma de que no se puedan modificar el Director y Genero.
 
 
 app.run()
