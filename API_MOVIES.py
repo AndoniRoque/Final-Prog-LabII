@@ -84,7 +84,6 @@ movies = [
         'Genre':'Action',
         'Synopsis':"John Wick, a former hitman, is confronted by mobster Viggo Tarazov, who offers a reward to whoever manages to end Wick's life."
     },
-
 ]
 
 
@@ -143,19 +142,24 @@ def delete_movie(id):
 
 @app.route("/directors", methods=["GET"])
 def return_directors():
-    dir = []
-    for directors in movies:
-        dir.append(directors["Director"])
-    return jsonify(dir), HTTPStatus.OK
+    dir = [d["Director"] for d in movies]
+    directors_list = remove_repeats(dir)
+    return jsonify(directors_list), HTTPStatus.OK
 
 
 @app.route("/genres", methods=["GET"])
 def return_genres():
-    gr = []
-    for genres in movies:
-        if genres["Genre"] not in gr:
-            gr.append(genres["Genre"])
-    return jsonify(gr), HTTPStatus.OK
+    gr = [g["Genre"] for g in movies]
+    genre_list = remove_repeats(gr)
+    return jsonify(genre_list), HTTPStatus.OK
+
+
+def remove_repeats(list):
+    new_list = []
+    for elem in list:
+        if elem not in new_list:
+            new_list.append(elem)
+    return new_list
 
 
 @app.route("/movies/edit/<id>", methods=["PUT"])
