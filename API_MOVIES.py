@@ -119,14 +119,15 @@ def create_movie():
     last_id = [x['id'] for x in movies]
     new_id = max(last_id) + 1
 
-    if "Title" and "Year" and "Director" and "Genre" and "Synopsis" in new_movie:
+    if "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" in new_movie:
         movies.append({
             "Title" : new_movie["Title"],
             "Year" : new_movie["Year"],
             "Director": new_movie["Director"],
             "Genre": new_movie["Genre"],
             "Synopsis": new_movie["Synopsis"],
-            "id": new_id
+            "id": new_id,
+            "Poster": new_movie["Poster"]
         })
         return jsonify({}), HTTPStatus.OK
     else:
@@ -176,9 +177,14 @@ def remove_repeats(list):
 def edit_info(id):
     info = request.get_json()
     pos = int(id)
+    ids = [i["id"] for i in movies]
 
     if info is None:
         return jsonify({"ERROR": 'Json not found'}), HTTPStatus.BAD_REQUEST
+    elif pos not in ids:
+        return jsonify({"ERROR": 'Movie not found'}), HTTPStatus.NO_CONTENT
+    elif "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" not in info:
+        return jsonify({"ERROR": 'Missing info, please update'})
     else:
         movies[pos] = {
             "Title": info["Title"],
@@ -186,11 +192,10 @@ def edit_info(id):
             "Director": info["Director"],
             "Genre": info["Genre"],
             "Synopsis": info["Synopsis"],
-            "id": pos
+            "id": pos,
+            "Poster": info["Poster"]
         }
         return jsonify({}), HTTPStatus.OK
-# Para este metodo queda agregar algunas excepciones como verificar que el elemento a editar exista por ejemplo
-# y queda encontrar una forma de que no se puedan modificar el Director y Genero.
 
 
 app.run()
