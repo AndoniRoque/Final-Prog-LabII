@@ -3,6 +3,23 @@ from http import HTTPStatus
 
 app = Flask(__name__)
 
+
+def list_of_values(text):
+    if text == "Synopsis" or "synopsis" or "SYNOPSIS" or text[-1] != "s":
+        return [l[text.capitalize()] for l in movies]
+    else:
+        remove_s = text[:-1]
+        return [l[remove_s.capitalize()] for l in movies]
+
+
+def remove_repeats(list):
+    new_list = []
+    for elem in list:
+        if elem not in new_list:
+            new_list.append(elem)
+    return new_list
+
+
 movies = [
     {
         'id': 0,
@@ -150,27 +167,9 @@ def delete_movie(id):
     else:
         return jsonify({}), HTTPStatus.BAD_REQUEST
 
-
-@app.route("/directors", methods=["GET"])
-def return_directors():
-    dir = [d["Director"] for d in movies]
-    directors_list = remove_repeats(dir)
-    return jsonify(directors_list), HTTPStatus.OK
-
-
-@app.route("/genres", methods=["GET"])
-def return_genres():
-    gr = [g["Genre"] for g in movies]
-    genre_list = remove_repeats(gr)
-    return jsonify(genre_list), HTTPStatus.OK
-
-
-def remove_repeats(list):
-    new_list = []
-    for elem in list:
-        if elem not in new_list:
-            new_list.append(elem)
-    return new_list
+@app.route("/movies/list/<string:dir_gr>", methods=["GET"])
+def genres_directors(dir_gr):
+    return jsonify(list_of_values(dir_gr))
 
 
 @app.route("/movies/edit/<id>", methods=["PUT"])
