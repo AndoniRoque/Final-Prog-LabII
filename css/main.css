@@ -1,6 +1,26 @@
 :root{
     background-color: rgb(3, 3, 4);
 }
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logo__image{
+    max-height: 100%;
+    margin-right: 0
+}
+
+.logo__letters{
+  width: 800px;
+  height: 600px;
+}
 .container{
    height: 300px;
    width: auto;
