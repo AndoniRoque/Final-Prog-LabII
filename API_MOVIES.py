@@ -48,18 +48,20 @@ def create_movie():
     new_movie = request.get_json()
     last_id = [x['id'] for x in movies]
     new_id = max(last_id) + 1
+    titles = [t['Title'] for t in movies]
 
-    if "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" in new_movie:
-        movies.append({
-            "Title" : new_movie["Title"],
-            "Year" : new_movie["Year"],
-            "Director": new_movie["Director"],
-            "Genre": new_movie["Genre"],
-            "Synopsis": new_movie["Synopsis"],
-            "id": new_id,
-            "Poster": new_movie["Poster"]
-        })
-        return jsonify({}), HTTPStatus.OK
+    if new_movie["Title"] not in titles:
+        if "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" in new_movie:
+            movies.append({
+                "Title" : new_movie["Title"],
+                "Year" : new_movie["Year"],
+                "Director": new_movie["Director"],
+                "Genre": new_movie["Genre"],
+                "Synopsis": new_movie["Synopsis"],
+                "id": new_id,
+                "Poster": new_movie["Poster"]
+            })
+            return jsonify({}), HTTPStatus.OK
     else:
         return jsonify({}), HTTPStatus.BAD_REQUEST
 
