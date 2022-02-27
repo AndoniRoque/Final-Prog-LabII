@@ -10,6 +10,7 @@
     margin-left: 50px;
     margin-bottom: 20px;
     margin-top: 20px;
+    animation: fadeIn 8s
 }
 
 .logo__image{
@@ -70,7 +71,6 @@
     animation: drop 3s
 }
 
-
 .poster__overlay--blur {
     backdrop-filter: blur(5px);
 }
@@ -97,18 +97,6 @@
 .poster__description {
     font-size: 1.25em;
     margin-top: 0.25em;
-}
-
-.posters_top{
-    animation: drop 3s;
-    max-width:350px;
-    max-height:350px;
-}
-
-.posters_bottom{
-    animation: fadeIn s;
-    max-width:350px;
-    max-height:350px;
 }
 
 @keyframes drop {
