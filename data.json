@@ -2,25 +2,25 @@
   "movies": [
     {
       "id": 0,
-      "Title": "Breakfast_Club",
+      "Title": "Breakfast Club",
       "Year": "1985",
       "Director": "John Hughes",
       "Genre": "Drama",
       "Synopsis": "Five high school students find themselves in school detention on Saturday and discover that they have a lot more in common than they thought.",
-      "Poster": "https://pics.filmaffinity.com/Numb-377509483-large.jpg"
+      "Poster": "https://m.media-amazon.com/images/I/51zlpAsG1nL._AC_.jpg"
     },
     {
       "id": 1,
-      "Title": "Jurassic_Park",
+      "Title": "Jurassic Park",
       "Year": "1993",
       "Director": "Steven Spielberg",
       "Genre": "Sci-Fi/Adventure",
       "Synopsis": "Thanks to DNA fossilized in amber, John Hammond brings to life various species of dinosaurs and creates Jurassic Park, a theme park on an island in Costa Rica. But what seemed like a dream quickly turns into a nightmare.",
-      "Poster": "https://m.media-amazon.com/images/I/51zlpAsG1nL._AC_.jpg"
+      "Poster": "https://m.media-amazon.com/images/I/61iF3RSsLsL._AC_SL1000_.jpg"
     },
     {
       "id": 2,
-      "Title": "Mulholland_Drive",
+      "Title": "Mulholland Drive",
       "Year": "2001",
       "Director": "David Lynch",
       "Genre": "Suspense/Mystery",
@@ -29,7 +29,7 @@
     },
     {
       "id": 3,
-      "Title": "In_the_Mood_for_Love",
+      "Title": "In the Mood for Love",
       "Year": "2000",
       "Director": "Wong Kar-wai",
       "Genre": "Romantic/Drama",
@@ -65,7 +65,7 @@
     },
     {
       "id": 7,
-      "Title": "Side_Effects",
+      "Title": "Side Effects",
       "Year": "2013",
       "Director": "Steven Soderbergh",
       "Genre": "Suspense/Drama",
@@ -74,7 +74,7 @@
     },
     {
       "id": 8,
-      "Title": "John_Wick",
+      "Title": "John Wick",
       "Year": "2014",
       "Director": "Chad Stahelski",
       "Genre": "Action",
