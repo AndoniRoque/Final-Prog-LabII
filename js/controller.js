@@ -1,7 +1,6 @@
 fetch('http://127.0.0.1:5000/movies')
     .then( res => res.json())
     .then( movies => {
-        
         clear_node('side_bar');
         
         pos = movies.length - 1;
@@ -27,10 +26,9 @@ fetch('http://127.0.0.1:5000/movies')
         
         console.log("the random number is: " + num)
 
-        for (let i=0; i < 3; i++){
-            console.log(num)
-            get_poster(movies[num].Poster)
-            main_bar(movies[num].Title, movies[num].Year, movies[num].Director, movies[num].Genre, movies[num].Synopsis);
+        for (let i=0; i < 5; i++){
+            console.log(num);
+            main_bar(movies[num].Title, movies[num].Year, movies[num].Director, movies[num].Genre, movies[num].Synopsis, movies[num].Poster);
             num += 1;
         }
     })
@@ -67,19 +65,47 @@ function latest_added(title, year, poster){
 
 function main_bar(title, year, director, genre, synopsis, poster){
     console.log("PELICULAS: " + title + year + director + genre + synopsis + poster);
-}
-
-function get_poster(image){
-    console.log(image)
     let cont = document.createElement('div');
-    cont.classList.add('poster_main');
+    cont.classList.add('movie_info');
+
+    let cont_img = document.createElement('div');
+    cont_img.classList.add('poster_main');
 
     let img = document.createElement('img');
-    img.src = image;
-    cont.appendChild(img);
+    img.src = poster;
+    cont_img.appendChild(img);
 
-    let c = document.getElementById('main_bar');
+    let hTitle = document.createElement('h2');
+    hTitle.classList.add('Title');
+
+    let txtTitle = document.createTextNode('Title: ' + title);
+
+    let info = document.createElement('div');
+    info.classList.add('tech_file');
+
+    let pYear = document.createElement('p');
+    let txtYear = document.createTextNode("Year: " + year);
+    let pDirector = document.createElement('p');
+    let txtDirector = document.createTextNode("Director: " + director);
+    let pGenre = document.createElement('p');
+    let txtGenre = document.createTextNode("Genre: " + genre);
+    let pSynopsis = document.createElement('p');
+    let txtSnopsis = document.createTextNode("Synopsis: " + synopsis);
+
+    hTitle.appendChild(txtTitle);
+    pDirector.appendChild(txtDirector);
+    pYear.appendChild(txtYear);
+    pGenre.appendChild(txtGenre);
+    pSynopsis.appendChild(txtSnopsis);
+
+    info.appendChild(hTitle);
+    info.appendChild(pDirector);
+    info.appendChild(pYear);
+    info.appendChild(pGenre);
+    info.appendChild(pSynopsis);
+
+    cont.appendChild(cont_img);
+    cont.appendChild(info);
+    let c = document.getElementById('titles');
     c.appendChild(cont);
-
 }
-

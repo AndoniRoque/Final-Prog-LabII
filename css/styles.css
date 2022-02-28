@@ -3,14 +3,17 @@
     --color--headbackground: rgb(255, 210, 181);
     --color--borders: rgb(62, 72, 64);
     --color--borders2: rgb(226, 120, 18);
+    --color--borders3: rgb(186, 142, 115);
+    --color--background2: rgb(22, 56, 58);
+
 }
 
-#cuerpo {
+#body {
     margin:0px;
     background-color: var(--color--background);
 }
 
-.encabezado {
+.header {
     background-color: var(--color--headbackground);
     height: 100px;
     border-bottom: solid 5px var(--color--borders);
@@ -19,45 +22,74 @@
 #main {
     display:flex;
     flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     min-height: 100vh;
-}
-
-.latest_added {
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    border: solid 5px rgb(62, 72, 64);
-    border-radius: 30px;
-    background-color: var(--color--background);
-    width: 400px;
-    height: 250px;   
-}
-
-.poster {
-    height: 200px;
-    border: var(--color--borders2) solid 2px;
 }
 
 #side_bar {
     display: flex;
-    flex: 1;
     flex-direction: column;
+    justify-content:safe;
+    height: auto;
+    width: 200px;
+    border:rgb(226, 120, 18) solid 3px;
     background-color: var(--color--borders);
-    border: var(--color--borders2) solid 3px;
+}
+
+.latest_added {
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-right: 10px;
+    margin-top: 10px
+}
+
+.latest_added p {
+    width: 20ch;
+    text-align: center;
+}
+
+.poster {
+    height: auto;
+    width: 160px;
+    border: var(--color--borders2) solid 2px;
 }
 
 #main_bar {
-    display:flex;
-    flex-direction: column;
-    flex:3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .poster_main { 
     display: flex;
-    flex-direction: column;
-    height: 500px;
-    width: 250px;;
+    height: auto;
+    width: 330px;
+    margin: 10px;
+    align-self:center;
+    border: var(--color--background2) solid 8px;
 }
+
+.poster_main img {
+    width: 330px;
+}
+
+.movie_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tech_file {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color--headbackground);
+    margin-right: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    border: var(--color--borders3) solid 5px;
+    align-items: flex-start;
+    width: 90ch;
+} 
