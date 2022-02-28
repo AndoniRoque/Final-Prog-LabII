@@ -25,6 +25,7 @@ def remove_repeats(list):
 db = open('data.json')
 data = json.load(db)
 movies = data['movies']
+hot = data['hot']
 
 
 @app.route("/",methods=["GET"])
@@ -35,12 +36,27 @@ def front_page():
 def return_movies():
     return jsonify(movies)
 
+# @app.route("/movies/hot",methods=["GET"])
+# def return_hot_movies():
+#     return jsonify(hot), HTTPStatus.OK
+
+@app.route("/movies/last",methods=["GET"])
+def return_last_movies():
+    return jsonify(movies[-10:]), HTTPStatus.OK
+
 @app.route("/movies/<Title>",methods=["GET"])
 def return_title(Title):
     for movie in movies:
         if movie["Title"] == Title:
             return jsonify(movie), HTTPStatus.OK
     return jsonify({}), HTTPStatus.NOT_FOUND
+
+# @app.route("/movies/hot/<Title>",methods=["GET"])
+# def return_hot(Title):
+#     for movie in hot:
+#         if movie["Title"] == Title:
+#             return jsonify(movie), HTTPStatus.OK
+#     return jsonify({}), HTTPStatus.NOT_FOUND
 
 @app.route("/movies", methods=["POST"])
 def create_movie():

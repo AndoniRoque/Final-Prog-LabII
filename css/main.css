@@ -1,5 +1,6 @@
 :root{
     background-color: rgb(3, 3, 4);
+
 }
 
 .logo{
@@ -10,12 +11,11 @@
     margin-left: 50px;
     margin-bottom: 20px;
     margin-top: 20px;
-    animation: fadeIn 8s
+    animation: fadeIn 8s;
 }
 
 .logo__image{
     max-height: 100%;
-    margin-right: 0
 }
 
 .logo__letters{
@@ -23,8 +23,6 @@
   height: 600px;
 }
 .container{
-   height: 300px;
-   width: auto;
    display: flex;
    flex-direction: row;
    margin-bottom: 20px;
@@ -35,7 +33,7 @@
 .poster {
     position: relative;
     max-height: 100%;
-    max-width: 100%;
+    max-width: 250px;
 }
 
 .poster__img {
@@ -45,13 +43,13 @@
     animation: drop 3s;
     border-radius: 2px;
 }
-.poster__img_bottom {
+/* .poster__img_bottom {
     display: block;
     margin-right: 10px;
     height: 300px;
     animation: fadeIn 5s;
     border-radius: 2px;
-}
+} */
 
 .poster__overlay {
     position: absolute;
@@ -97,6 +95,7 @@
 .poster__description {
     font-size: 1.25em;
     margin-top: 0.25em;
+    max-width: 100%;
 }
 
 @keyframes drop {
