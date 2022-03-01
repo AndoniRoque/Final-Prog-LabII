@@ -24,9 +24,10 @@
 }
 .container{
    display: flex;
+   flex-wrap: wrap;
    flex-direction: row;
    margin-bottom: 20px;
-   margin-left: 50px;
+   margin-left: 130px;
 }
 
 
@@ -38,18 +39,12 @@
 
 .poster__img {
     display: block;
+    margin-top: 10px;
     margin-right: 10px;
     height: 300px;
     animation: drop 3s;
     border-radius: 2px;
 }
-/* .poster__img_bottom {
-    display: block;
-    margin-right: 10px;
-    height: 300px;
-    animation: fadeIn 5s;
-    border-radius: 2px;
-} */
 
 .poster__overlay {
     position: absolute;
@@ -59,7 +54,7 @@
     height: 300px;
     background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
-    font-family: 'Quicksand', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     align-items: center;
