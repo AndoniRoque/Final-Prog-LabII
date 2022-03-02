@@ -8,6 +8,26 @@
 
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    animation: fadeIn 8s;
+}
+
+.logo__image{
+    max-height: 100%;
+}
+
+.logo__letters{
+  width: 800px;
+  height: 600px;
+}
+
 #body {
     margin:0px;
     background-color: var(--color--background);
@@ -17,6 +37,7 @@
     background-color: var(--color--headbackground);
     height: 100px;
     border-bottom: solid 5px var(--color--borders);
+    margin: 0px;
 }
 
 #main {
@@ -35,6 +56,7 @@
     width: 200px;
     border:rgb(226, 120, 18) solid 3px;
     background-color: var(--color--borders);
+    margin-top: 10px;
 }
 
 .latest_added {
@@ -60,6 +82,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    flex: 2;
 }
 
 .poster_main { 
@@ -78,7 +101,6 @@
 .movie_info{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
 }
 
