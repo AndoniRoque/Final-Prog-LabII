@@ -1,7 +1,7 @@
 
 .box{
-    width: 250px;
-    padding: 40px;
+    width: 220px;
+    padding: 30px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -10,7 +10,7 @@
     text-align: center;
     animation: fadeIn 5s;
     opacity: 0.8;
-    border-radius: 2px;
+    border-radius: 35px;
 
   }
 
