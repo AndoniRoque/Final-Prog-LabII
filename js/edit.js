@@ -4,13 +4,15 @@ btn_up.addEventListener('click', event =>{
     event.preventDefault();
     let formData = document.getElementById('formData');
     let inputs = formData.getElementsByTagName('input');
+    let select_d = document.getElementById('director');
+    let select_g = document.getElementById('genre');
 
     let newTitle = inputs[0].value;
-    let newDirector = inputs[1].value;
-    let newYear = inputs[2].value;
-    let newGenre = inputs[3].value;
-    let newSynopsis = inputs[4].value;
-    let newPoster = inputs[5].value;
+    let newDirector = select_d.options[select_d.selectedIndex].value;
+    let newYear = inputs[1].value;
+    let newGenre = select_g.options[select_g.selectedIndex].value;
+    let newSynopsis = inputs[2].value;
+    let newPoster = inputs[3].value;
     
     let newMovie = {
         Title: newTitle,

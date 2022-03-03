@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title> Final Programacion & Laboratorio de Computacion II </title>
+        <meta charset="UTF-8">
+        <link href="Final-Prog-LabII/css/styles.css" rel="stylesheet" >
+        <link rel="shortcut icon" href="#">
+    </head>
+
+    <body id="body">
+        <div id="container">
+            <header class="header_edit">
+                <div class="logo_edit">
+                    <img class="logo__image_edit" src="Final-Prog-LabII/images/logo.png">
+                    <img class="logo__letters_edit" src="Final-Prog-LabII/images/letras.png">
+                </div>
+            </header>
+
+            <main id="main_edit">
+                <form id="formData">
+                    <p> Please complete the form below with all the information required </p>
+                    <label>Title</label>
+                    <input name="title">
+                    <label>Director</label>
+                    <select class="selector" id="director">
+                        <option> select an option </option>
+                        <option value="John Hughes"> John Hughes </option>
+                        <option value="Steven Spielberg"> Steven Spielberg </option>
+                        <option value="David Lynch"> David Lynch </option>
+                        <option value="Wong Kar-Wai"> Wong Kar-Wai </option>
+                        <option value="Ridley Scott"> Ridley Scott </option>
+                        <option value="Jerry Zucker"> Jerry Zucker </option>
+                        <option value="Zack Snyder"> Zack Snyder </option>
+                        <option value="Steven Soderbergh"> Steven Soderbergh </option>
+                        <option value="Chad Stahelski"> Chad Stahelski </option>
+                        <option value="Jason Goode"> Jason Goode </option>
+                    </select>
+                    <label>Year </label>     
+                    <input name="year">
+                    <label>Genre </label>
+                    <select class="selector" id="genre">
+                        <option> select an option </option>
+                        <option value="Drama"> Drama </option>
+                        <option value="Sci-Fi/Adventure"> Sci-Fi/Adventure </option>
+                        <option value="Suspense/Mystery"> Suspense/Mystery </option>
+                        <option value="Romantic/Drama"> Romantic/Drama </option>
+                        <option value="Sci-Fi/Horror"> Sci-Fi/Horror </option>
+                        <option value="Romantic/Fantasy"> Romantic/Fantasy </option>
+                        <option value="Action/Adventure"> Action/Adventure </option>
+                        <option value="Suspense Drama"> Suspense/Drama </option>
+                        <option value="Action"> Action </option>
+                    </select>
+                    <label>Synopsis </label>
+                    <input name="synopsis">
+                    <label>Poster URL </label>
+                    <input name="poster">
+                    <button id="upload" class="btns"> Load New Movie </button>
+                    <button id="edit" class="btns"> Edit information </button>
+                </form>
+            </main>
+
+            <footer>
+                Juan Fullana & Andoni Roque
+            </footer>
+
+        </div>
+        <script defer src="/Final-Prog-LabII/js/edit.js"></script>
+    </body>
+</html>
