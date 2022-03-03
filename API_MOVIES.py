@@ -25,8 +25,6 @@ def remove_repeats(list):
 db = open('data.json')
 data = json.load(db)
 movies = data['movies']
-hot = data['hot']
-
 
 @app.route("/",methods=["GET"])
 def front_page():
@@ -35,10 +33,6 @@ def front_page():
 @app.route("/movies",methods=["GET"])
 def return_movies():
     return jsonify(movies)
-
-# @app.route("/movies/hot",methods=["GET"])
-# def return_hot_movies():
-#     return jsonify(hot), HTTPStatus.OK
 
 @app.route("/movies/last",methods=["GET"])
 def return_last_movies():
@@ -51,16 +45,13 @@ def return_title(Title):
             return jsonify(movie), HTTPStatus.OK
     return jsonify({}), HTTPStatus.NOT_FOUND
 
-# @app.route("/movies/hot/<Title>",methods=["GET"])
-# def return_hot(Title):
-#     for movie in hot:
-#         if movie["Title"] == Title:
-#             return jsonify(movie), HTTPStatus.OK
-#     return jsonify({}), HTTPStatus.NOT_FOUND
+@app.route("/movies/list/<string:dir_gr>", methods=["GET"])
+def genres_directors(dir_gr):
+    return jsonify(list_of_values(dir_gr))
+
 
 @app.route("/movies", methods=["POST"])
 def create_movie():
-    # recibir datos por parte del usuario
     new_movie = request.get_json()
     last_id = [x['id'] for x in movies]
     new_id = max(last_id) + 1
@@ -97,10 +88,6 @@ def delete_movie(id):
         return jsonify({}), HTTPStatus.OK
     else:
         return jsonify({}), HTTPStatus.BAD_REQUEST
-
-@app.route("/movies/list/<string:dir_gr>", methods=["GET"])
-def genres_directors(dir_gr):
-    return jsonify(list_of_values(dir_gr))
 
 
 @app.route("/movies/edit/<id>", methods=["PUT"])

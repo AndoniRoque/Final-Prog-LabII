@@ -28,16 +28,17 @@ fetch('http://127.0.0.1:5000/movies')
             let cont = document.getElementById('titles');
             cont.innerHTML +=
                 `<div class="movie_info">
-                    <div class="poster_main">
+                    <div class="poster_main" onclick="redirect()">
                         <img src=${movies[num].Poster}>
                     </div>
-                    <div class="tech_file">
+                    <div class="tech_file" onclick="redirect(${movies[num].id})">
                         <p> <strong> Title: </strong>${movies[num].Title}</p> 
                         <p> <b> Director: </b> ${movies[num].Director} </p>
                         <p> <b> Year: </b> ${movies[num].Year}</p>
                         <p> <b> Synopsis: </b> ${movies[num].Synopsis}</p>
                     </div>
-                </div>` 
+                </div>
+                <hr class="separator">` 
             num++
             console.log(num)
             if (num >= movies.length){
@@ -75,4 +76,8 @@ function latest_added(title, year, poster){
 
     let c = document.getElementById('side_bar');
     c.appendChild(cont);
+}
+
+function redirect(id){
+    window.location.href="front.html";
 }
