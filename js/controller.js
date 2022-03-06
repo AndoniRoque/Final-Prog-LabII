@@ -2,7 +2,7 @@ fetch('http://127.0.0.1:5000/movies')
     .then( res => res.json())
     .then( movies => {
         clear_node('side_bar');
-        
+
         pos = movies.length - 1;
         i = 0;
 
@@ -18,19 +18,87 @@ fetch('http://127.0.0.1:5000/movies')
             }
         }
 
-        let num = Math.floor(Math.random() * movies.length - 2);
+        let num = Math.floor(Math.random() * movies.length - 1);
 
         if (num < 0){
             num = num * -1;
         }
-        
-        console.log("the random number is: " + num)
 
-        for (let i=0; i < 5; i++){
-            console.log(num);
-            main_bar(movies[num].Title, movies[num].Year, movies[num].Director, movies[num].Genre, movies[num].Synopsis, movies[num].Poster);
-            num += 1;
+        for (let i=0; i < 6; i++){
+            let cont = document.getElementById('titles');
+            cont.innerHTML +=
+                `<div class="movie_info">
+                    <div class="poster_main" onclick="redirect()">
+                        <img src=${movies[num].Poster}>
+                    </div>
+                    <div class="tech_file" onclick="redirect(${movies[num].id})">
+                        <p> <strong> Title: </strong>${movies[num].Title}</p> 
+                        <p> <b> Director: </b> ${movies[num].Director} </p>
+                        <p> <b> Year: </b> ${movies[num].Year}</p>
+                        <p> <b> Synopsis: </b> ${movies[num].Synopsis}</p>
+                    </div>
+                </div>
+                <hr class="separator">` 
+            num++
+            console.log(num)
+            if (num >= movies.length){
+                num = 0;
+            }
+            console.log(num)
         }
+
+        let srch_btn = document.getElementById('srch_btn');
+        let input = document.getElementById('search');
+        let srch_select = document.getElementById('srch_selector');
+
+        let srch_opt = srch_select.options[srch_select.selectedIndex].value;
+        let srch_input = input.value;
+
+        srch_btn.addEventListener('click', event => {
+            found = false;
+            i=0;
+            console.log(srch_opt);
+            if (srch_opt === "Directors"){
+                while (found == false){
+                    if (srch_input == movies[i].Director){
+                        console.log("El director que buscas es: " + movies[i].Director);
+                        found = true;
+                    }
+                    else{
+                        i++;
+                    }
+                }
+            }
+            else if(srch_opt === "Genres"){
+                while (found == false){
+                    if (srch_input == movies[i].Genre){
+                        console.log("El genero que buscas es: " + srch_input);
+                        console.log("Podemos ofrecerte las siguientes peliculas en ese genero:");
+                        for (t = 0; t < movies.length; t++){
+                            if (srch_input == movies[t].Genre){
+                                console.log(movies[t].Title);
+                            }
+                        }
+                        found = true;
+                    }
+                    else{
+                        i++;
+                    }
+                }
+            }
+            else if( srch_opt === "Movies"){
+                while (found == false) {
+                    if (srch_input == movies[i].Title){
+                        console.log("La pelicula que buscas es: " + movies[i].Title);
+                        found = true;
+                    }
+                    else {
+                        i++;
+                    }
+                }
+
+            }
+        })
     })
 
 function clear_node(id){
@@ -63,49 +131,6 @@ function latest_added(title, year, poster){
     c.appendChild(cont);
 }
 
-function main_bar(title, year, director, genre, synopsis, poster){
-    console.log("PELICULAS: " + title + year + director + genre + synopsis + poster);
-    let cont = document.createElement('div');
-    cont.classList.add('movie_info');
-
-    let cont_img = document.createElement('div');
-    cont_img.classList.add('poster_main');
-
-    let img = document.createElement('img');
-    img.src = poster;
-    cont_img.appendChild(img);
-
-    let hTitle = document.createElement('h2');
-    hTitle.classList.add('Title');
-
-    let txtTitle = document.createTextNode('Title: ' + title);
-
-    let info = document.createElement('div');
-    info.classList.add('tech_file');
-
-    let pYear = document.createElement('p');
-    let txtYear = document.createTextNode("Year: " + year);
-    let pDirector = document.createElement('p');
-    let txtDirector = document.createTextNode("Director: " + director);
-    let pGenre = document.createElement('p');
-    let txtGenre = document.createTextNode("Genre: " + genre);
-    let pSynopsis = document.createElement('p');
-    let txtSnopsis = document.createTextNode("Synopsis: " + synopsis);
-
-    hTitle.appendChild(txtTitle);
-    pDirector.appendChild(txtDirector);
-    pYear.appendChild(txtYear);
-    pGenre.appendChild(txtGenre);
-    pSynopsis.appendChild(txtSnopsis);
-
-    info.appendChild(hTitle);
-    info.appendChild(pDirector);
-    info.appendChild(pYear);
-    info.appendChild(pGenre);
-    info.appendChild(pSynopsis);
-
-    cont.appendChild(cont_img);
-    cont.appendChild(info);
-    let c = document.getElementById('titles');
-    c.appendChild(cont);
+function redirect(id){
+    window.location.href="front.html";
 }

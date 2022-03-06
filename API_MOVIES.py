@@ -8,10 +8,12 @@ CORS(app)
 
 def list_of_values(text):
     if text == "Synopsis" or "synopsis" or "SYNOPSIS" or text[-1] != "s":
-        return [l[text.capitalize()] for l in movies]
+        list = [l[text.capitalize()] for l in movies]
+        return remove_repeats(list)
     else:
         remove_s = text[:-1]
-        return [l[remove_s.capitalize()] for l in movies]
+        list = [l[remove_s.capitalize()] for l in movies]
+        return remove_repeats(list)
 
 
 def remove_repeats(list):
@@ -96,7 +98,7 @@ def edit_info(id):
     pos = int(id)
     ids = [i["id"] for i in movies]
 
-    if info is None:
+    if info is None: 
         return jsonify({"ERROR": 'Json not found'}), HTTPStatus.BAD_REQUEST
     elif pos not in ids:
         return jsonify({"ERROR": 'Movie not found'}), HTTPStatus.NO_CONTENT
