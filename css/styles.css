@@ -9,12 +9,25 @@
 
 }
 
+
+
 .logo{
-    margin-left: 50px;
+    /* margin-left: 50px;
     margin-bottom: 20px;
     margin-top: 20px;
     animation: fadeIn 8s;
+    animation: fadeIn 8s; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 0px;
     animation: fadeIn 8s;
+    /* position: sticky;
+    top: 0; */
 }
 
 .logo_edit{
@@ -29,7 +42,7 @@
 
 .logo__image{
     max-height: 100%;
-    margin-right: 0
+    margin-top: 40px;
 }
 
 .logo__image_edit{
@@ -44,17 +57,78 @@
     max-height: 500px;
 }
 
-.header {
-    background-color: var(--color--headbackground);
-    height: 100px;
-    border-bottom: solid 5px var(--color--borders);
-    width: 100vmax;
-    box-shadow: 0px 0px 20px var(--color--headbackground);
-    border-bottom: solid var(--color--borders);
-    margin: 0px;
-    background-image: radial-gradient( var(--color--headbackground) 90%, var(--color--borders2));
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1};
+}
+#search{
+    width: 250px;
+    display: flex;
+    align-self: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-right: 5px;
+    height: 22px;
+}
+
+.nav_bar {
+    height: 40px;
+    width: 100%;
+    display: flex;
     position: sticky;
+    top: 0px;
+    background-color: var(--color--redseparator);
+    border: 2px solid var(--color--borders3);
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
     top: 0;
+}
+
+.nav_bar p {
+    display: flex;
+}
+
+
+
+.search_btn {
+    display: flex;
+    margin: 1%;
+    justify-content: center;
+    align-self: center;
+    color: var(--color--headbackground);
+    background-color: var(--color--background);
+    cursor: pointer;
+    font-size: medium;
+    border: 3px solid var(--color--headbackground);
+    transition: 0.4s;
+}
+
+.search_btn:hover{
+    background-color: var(--color--headbackground);
+    color: var(--color--background);
+    border: 3px solid var(--color--background);
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+}
+
+.search_btn:active{
+    transition: 0s;
+
+    box-shadow: 0px 0px 0px;
+}
+
+.header {
+    display:flex;
+    flex-direction: column;
+    height: 150px;
+    width: 100vmax;
+    margin-top: 40px;
+    background-image: radial-gradient( var(--color--headbackground) 70%, var(--color--borders2));
+    border-bottom: 2px solid var(--color--borders);
+    box-shadow: 2px 0px 10px 2px var(--color--headbackground);
+    
 }
 
 .header_edit {
@@ -160,6 +234,7 @@
 }
 .poster_main img:hover{
     width: 335px;
+    cursor: pointer;
 }
 
 .movie_info{
@@ -177,12 +252,12 @@
     padding-left: 10px;
     border: var(--color--borders3) solid 5px;
     align-items: flex-start;
-    width: 90ch;
+    min-width: 90ch;
     box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+    cursor: pointer;
 } 
 
 .tech_file:hover{
-    width: 91ch;
     height: 240px;   
 }
 
@@ -199,8 +274,26 @@
     display: flex;
     margin: 1%;
     justify-content: center;
-    width: 30%;
+    width: 25%;
     align-self: center;
+    color: var(--color--headbackground);
+    background-color: var(--color--background);
+    cursor: pointer;
+    font-size: medium;
+    border: 3px solid var(--color--headbackground);
+    transition: 0.4s;
+}
+
+.btns:hover{
+    background-color: var(--color--headbackground);
+    color: var(--color--background);
+    border: 3px solid var(--color--background);
+    box-shadow: 0px 5px 10px 0px rgb(0,0,0,0.5);
+}
+
+.btns:active{
+    transition: 0s;
+    box-shadow: 0px 0px 0px;
 }
 
 #formData {
@@ -212,6 +305,9 @@
     border-radius: 30px;
     width: 50%;
     margin-top: 5%;
+    padding-bottom: 3px;
+    height: 550px;
+    box-shadow: 2px 3px 3px var(--color--borders3);
 }
 
 #formData input {
@@ -220,6 +316,11 @@
     margin-left: 10%;
     width: 75%;
     box-shadow: 1px 2px 1px rgb(0,0,0,0.5);
+    border: 3px solid var(--color--background);
+}
+
+#formData input:hover{
+    box-shadow: 0px 3px 5px 0.7px var(--color--background);
 }
 
 .selector {
@@ -228,6 +329,30 @@
     margin-left: 10%;
     margin-top: 2%;
     box-shadow: 1px 2px 1px rgb(0,0,0,0.5);
+    cursor: pointer;
+    border: 3px solid var(--color--background);
+    color: var(--color--borders);
+}
+
+.srch_selector{
+    display:flex;
+    align-self: center;
+    justify-items: center;
+    color: var(--color--headbackground);
+    background-color: var(--color--background);
+    border: 3px solid var(--color--headbackground);
+    transition: 0.5s;
+}
+
+.srch_selector:hover{
+    background-color: var(--color--headbackground);
+    color: var(--color--background);
+    border: 3px solid var(--color--background);
+    box-shadow: 0px 5px 10px 0px rgb(0,0,0,0.5);
+}
+
+.selector:hover{
+    box-shadow: 0px 3px 5px 0.7px var(--color--background);
 }
 
 label {
