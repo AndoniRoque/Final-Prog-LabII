@@ -2,6 +2,7 @@ from flask import Flask,jsonify,request
 from http import HTTPStatus
 from flask_cors import CORS
 import json
+import random
 
 app = Flask(__name__)
 CORS(app)
@@ -14,7 +15,6 @@ def list_of_values(text):
         remove_s = text[:-1]
         list = [l[remove_s.capitalize()] for l in movies]
         return remove_repeats(list)
-
 
 def remove_repeats(list):
     new_list = []
@@ -37,13 +37,17 @@ def return_movies():
     return jsonify(movies)
 
 @app.route("/movies/last",methods=["GET"])
-def return_last_movies():
+def return_movies_last():
     return jsonify(movies[-10:]), HTTPStatus.OK
 
-@app.route("/movies/<Title>",methods=["GET"])
-def return_title(Title):
+@app.route("/movies/random",methods=["GET"])
+def return_movies_random():
+    return jsonify(random.sample(movies, 5))
+
+@app.route("/movies/<id>",methods=["GET"])
+def return_movie_by_id(id):
     for movie in movies:
-        if movie["Title"] == Title:
+        if movie["id"] == int(id):
             return jsonify(movie), HTTPStatus.OK
     return jsonify({}), HTTPStatus.NOT_FOUND
 
@@ -98,7 +102,7 @@ def edit_info(id):
     pos = int(id)
     ids = [i["id"] for i in movies]
 
-    if info is None: 
+    if info is None:
         return jsonify({"ERROR": 'Json not found'}), HTTPStatus.BAD_REQUEST
     elif pos not in ids:
         return jsonify({"ERROR": 'Movie not found'}), HTTPStatus.NO_CONTENT
@@ -116,5 +120,8 @@ def edit_info(id):
         }
         return jsonify({}), HTTPStatus.OK
 
+# TODO:
+# ruta para genres
+# ruta para directors
 
 app.run()

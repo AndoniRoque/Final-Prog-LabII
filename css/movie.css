@@ -1,0 +1,31 @@
+.main_box{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.info_box{
+    width: 450px;
+    height: 400px;
+    background-color: rgb(255, 210, 181);
+    justify-content: center;
+    margin-left: 5px;
+
+}
+
+.media_box{
+    display: flex;
+    flex-direction: row;
+}
+
+.media{
+    max-width: 560px;
+    max-height: 400px;
+}
+
+.trailer{
+    max-width: 560px;
+    max-height: 400px;
+    margin-left: 5px;
+}

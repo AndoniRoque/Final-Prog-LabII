@@ -1,3 +1,6 @@
+// fetch('http://127.0.0.1:5000/movies/last')
+// fetch('http://127.0.0.1:5000/movies/random')
+
 fetch('http://127.0.0.1:5000/movies')
     .then( res => res.json())
     .then( movies => {
@@ -28,17 +31,19 @@ fetch('http://127.0.0.1:5000/movies')
             let cont = document.getElementById('titles');
             cont.innerHTML +=
                 `<div class="movie_info">
-                    <div class="poster_main" onclick="redirect()">
-                        <img src=${movies[num].Poster}>
+                    <div class="poster_main">
+                        <a href="./movie.html?id=${movies[num].id}">
+                            <img src=${movies[num].Poster}>
+                        </a>
                     </div>
                     <div class="tech_file" onclick="redirect(${movies[num].id})">
-                        <p> <strong> Title: </strong>${movies[num].Title}</p> 
+                        <p> <strong> Title: </strong>${movies[num].Title}</p>
                         <p> <b> Director: </b> ${movies[num].Director} </p>
                         <p> <b> Year: </b> ${movies[num].Year}</p>
                         <p> <b> Synopsis: </b> ${movies[num].Synopsis}</p>
                     </div>
                 </div>
-                <hr class="separator">` 
+                <hr class="separator">`
             num++
             console.log(num)
             if (num >= movies.length){
@@ -109,7 +114,7 @@ function clear_node(id){
 }
 
 function latest_added(title, year, poster){
-    // console.log("Pelicula: ", title, " del año ", year, ". URL: ", poster);    
+    // console.log("Pelicula: ", title, " del año ", year, ". URL: ", poster);
 
     let cont = document.createElement('div');
     cont.classList.add('latest_added');
@@ -121,7 +126,7 @@ function latest_added(title, year, poster){
     img.classList.add('poster');
     img.src = poster;
     cont.appendChild(img);
-    
+
     let txtTitle = document.createTextNode(title + " (" + year +")");
 
     pTitle.appendChild(txtTitle);
@@ -129,8 +134,4 @@ function latest_added(title, year, poster){
 
     let c = document.getElementById('side_bar');
     c.appendChild(cont);
-}
-
-function redirect(id){
-    window.location.href="front.html";
 }

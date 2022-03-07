@@ -128,7 +128,7 @@
     background-image: radial-gradient( var(--color--headbackground) 70%, var(--color--borders2));
     border-bottom: 2px solid var(--color--borders);
     box-shadow: 2px 0px 10px 2px var(--color--headbackground);
-    
+
 }
 
 .header_edit {
@@ -215,7 +215,7 @@
     flex: 2;
 }
 
-.poster_main { 
+.poster_main {
     display: flex;
     height: auto;
     width: 330px;
@@ -255,10 +255,10 @@
     min-width: 90ch;
     box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
     cursor: pointer;
-} 
+}
 
 .tech_file:hover{
-    height: 240px;   
+    height: 240px;
 }
 
 .separator {

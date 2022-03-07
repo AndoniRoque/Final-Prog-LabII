@@ -15,16 +15,17 @@ var users = [
 		username: "Juancito",
 		password: "Fullana"
 	}
-
 ]
 
+// TODO
+// sacar al BE
 function getInfo() {
 	var username = document.getElementById('username').value
 	var password = document.getElementById('password').value
 
 	for(var i = 0; i < users.length; i++) {
 		if(username == users[i].username && password == users[i].password) {
-			window.location.href = "index.html";
+			window.location.href = "movies.html";
 			return
 		}
 	}
