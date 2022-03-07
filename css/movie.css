@@ -6,12 +6,15 @@
 }
 
 .info_box{
-    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 450px;
     height: 400px;
     background-color: rgb(255, 210, 181);
-    justify-content: center;
     margin-left: 5px;
-
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px
 }
 
 .media_box{
