@@ -1,0 +1,117 @@
+:root{
+    background-color: rgb(3, 3, 4);
+
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    animation: fadeIn 8s;
+}
+
+.logo__image{
+    max-height: 100%;
+}
+
+.logo__letters{
+  width: 800px;
+  height: 600px;
+}
+.container{
+   display: flex;
+   flex-direction: row;
+   margin-bottom: 20px;
+   margin-left: 50px;
+}
+
+
+.poster {
+    position: relative;
+    max-height: 100%;
+    max-width: 250px;
+}
+
+.poster__img {
+    display: block;
+    margin-right: 10px;
+    height: 300px;
+    animation: drop 3s;
+    border-radius: 2px;
+}
+/* .poster__img_bottom {
+    display: block;
+    margin-right: 10px;
+    height: 300px;
+    animation: fadeIn 5s;
+    border-radius: 2px;
+} */
+
+.poster__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+    animation: drop 3s
+}
+
+.poster__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+
+.poster__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.poster__overlay:hover {
+    opacity: 1;
+}
+
+.poster__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.poster__title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.poster__description {
+    font-size: 1.25em;
+    margin-top: 0.25em;
+    max-width: 100%;
+}
+
+@keyframes drop {
+    from{
+        margin-top: -300px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
