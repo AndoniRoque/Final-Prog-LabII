@@ -38,7 +38,7 @@ def return_movies():
 
 @app.route("/movies/random",methods=["GET"])
 def return_movies_random():
-    return jsonify(random.sample(movies, 5))
+    return jsonify(random.sample(movies, 6))
 
 @app.route("/movies/<id>",methods=["GET"])
 def return_movie_by_id(id):
