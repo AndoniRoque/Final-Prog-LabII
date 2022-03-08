@@ -30,15 +30,11 @@ movies = data['movies']
 
 @app.route("/",methods=["GET"])
 def front_page():
-    return "Main Site"
+    return jsonify(movies[-10:]), HTTPStatus.OK
 
 @app.route("/movies",methods=["GET"])
 def return_movies():
     return jsonify(movies)
-
-@app.route("/movies/last",methods=["GET"])
-def return_movies_last():
-    return jsonify(movies[-10:]), HTTPStatus.OK
 
 @app.route("/movies/random",methods=["GET"])
 def return_movies_random():
