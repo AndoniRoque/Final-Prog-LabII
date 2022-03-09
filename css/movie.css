@@ -5,6 +5,11 @@
     margin-left: 10px;
 }
 
+.main_box_genre {
+    display:flex;
+    flex-direction: column;
+}
+
 .info_box{
     display: flex;
     flex-direction: column;

@@ -33,7 +33,7 @@ fetch('http://127.0.0.1:5000/movies/random')
                     </div>
                     <div class="tech_file" onclick="redirect(${movies[i].id})">
                         <a href="./movie.html?id=${movies[i].id}">
-                            <p> <strong> Title: </strong>${movies[i].Title}</p>
+                            <p class="hide"> <strong> Title: </strong>${movies[i].Title}</p>
                             <p> <b> Director: </b> ${movies[i].Director} </p>
                             <p> <b> Year: </b> ${movies[i].Year}</p>
                             <p> <b> Synopsis: </b> ${movies[i].Synopsis}</p>
@@ -81,13 +81,8 @@ fetch('http://127.0.0.1:5000/movies')
             else if(srch_opt === "Genres"){
                 while (found == false){
                     if (srch_input == movies[i].Genre){
-                        alert("El genero que buscas es: " + srch_input);
-                        alert("Podemos ofrecerte las siguientes peliculas en ese genero:");
-                        for (t = 0; t < movies.length; t++){
-                            if (srch_input == movies[t].Genre){
-                                alert(movies[t].Title);
-                            }
-                        }
+                        genre = movies[i].Genre;
+                        location.href="./genres.html?genre=" + genre;
                         found = true;
                     }
                     else{
@@ -101,8 +96,6 @@ fetch('http://127.0.0.1:5000/movies')
             else if( srch_opt === "Movies"){
                 while (found == false) {
                     if (srch_input == movies[i].Title){
-                        
-                        alert("La pelicula que buscas es: " + movies[i].Title);
                         id = movies[i].id;
                         location.href="./movie.html?id=" + id;
                         found = true;
