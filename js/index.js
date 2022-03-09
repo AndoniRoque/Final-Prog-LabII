@@ -1,24 +1,26 @@
 var users = [
 	{
+		id: "0",
 		username: "Juan",
 		password: "Bajo"
 	},
 	{
+		id: "1",
 		username: "Carlos",
 		password: "Berger"
 	},
 	{
+		id: "2",
 		username: "Andoni",
 		password: "Roque"
 	},
     {
+		id: "3",
 		username: "Juancito",
 		password: "Fullana"
 	}
 ]
 
-// TODO
-// sacar al BE
 function getInfo() {
 	var username = document.getElementById('username').value
 	var password = document.getElementById('password').value
@@ -32,7 +34,7 @@ function getInfo() {
 	console.log("incorrect username or password")
 }
 
-  fetch('http://127.0.0.1:5000/movies/last')
+  fetch('http://127.0.0.1:5000/')
            .then( response => response.json())
            .then (data => {
 			   data.forEach(element => {

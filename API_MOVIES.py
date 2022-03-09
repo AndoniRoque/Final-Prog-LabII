@@ -75,6 +75,7 @@ def create_movie():
         return jsonify({}), HTTPStatus.BAD_REQUEST
 
 
+
 @app.route("/movies/<id>", methods=["DELETE"])
 def delete_movie(id):
     i = 0
@@ -116,8 +117,6 @@ def edit_info(id):
         }
         return jsonify({}), HTTPStatus.OK
 
-# TODO:
-# ruta para genres
-# ruta para directors
+
 
 app.run()
