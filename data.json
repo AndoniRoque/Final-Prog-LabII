@@ -4,7 +4,7 @@
       "id": 0,
       "Title": "Breakfast Club",
       "Year": "1985",
-      "Director": "John Hughes",
+      "director_id": 0,
       "Genre": "Drama",
       "Synopsis": "Five high school students find themselves in school detention on Saturday and discover that they have a lot more in common than they thought.",
       "Poster": "https://m.media-amazon.com/images/I/51zlpAsG1nL._AC_.jpg",
@@ -15,7 +15,7 @@
       "id": 1,
       "Title": "Jurassic Park",
       "Year": "1993",
-      "Director": "Steven Spielberg",
+      "director_id": 1,
       "Genre": "Sci-Fi-Adventure",
       "Synopsis": "Thanks to DNA fossilized in amber, John Hammond brings to life various species of dinosaurs and creates Jurassic Park, a theme park on an island in Costa Rica. But what seemed like a dream quickly turns into a nightmare.",
       "Poster": "https://m.media-amazon.com/images/I/61iF3RSsLsL._AC_SL1000_.jpg",
@@ -26,7 +26,7 @@
       "id": 2,
       "Title": "Mulholland Drive",
       "Year": "2001",
-      "Director": "David Lynch",
+      "director_id": 2,
       "Genre": "Suspense-Mystery",
       "Synopsis": "After an accident on Mulholland Drive, an amnesiac woman and an aspiring actress travel through Los Angeles searching for answers on a journey beyond dreams and reality.",
       "Poster": "https://m.media-amazon.com/images/I/61bKYArP5PL._AC_SY679_.jpg",
@@ -37,7 +37,7 @@
       "id": 3,
       "Title": "In the Mood for Love",
       "Year": "2000",
-      "Director": "Wong Kar-wai",
+      "director_id": 3,
       "Genre": "Romantic-Drama",
       "Synopsis": "Two neighbors form a strong bond after they both suspect extramarital activities by their spouses. However, they agree to keep their platonic bond so as not to make similar mistakes.",
       "Poster": "https://i.ibb.co/F4nfRKx/Em-DO0-Vk-Wk-AETP-r-copia.jpg",
@@ -48,7 +48,7 @@
       "id": 4,
       "Title": "Alien",
       "Year": "1979",
-      "Director": "Ridley Scott",
+      "director_id": 4,
       "Genre": "Sci-Fi-Horror",
       "Synopsis": "After responding to a call for help, the crew finds a ravenous and hideous creature aboard a spaceship.",
       "Poster": "https://m.media-amazon.com/images/I/81lrPEEJ2WL._AC_SY741_.jpg",
@@ -59,7 +59,7 @@
       "id": 5,
       "Title": "Ghost",
       "Year": "1990",
-      "Director": "Jerry Zucker",
+      "director_id": 5,
       "Genre": "Romantic-Fantasy",
       "Synopsis": "Sam and Molly are very much in love. One day Sam is killed because of a dark business deal and is transformed into a ghost that wanders the streets.",
       "Poster": "https://cdn.shopify.com/s/files/1/1416/8662/products/ghost_1990_original_film_art_2cc48497-c911-456d-873e-c90de476e0ee_1200x.jpg?v=1601918436",
@@ -70,7 +70,7 @@
       "id": 6,
       "Title": "Watchmen",
       "Year": "2009",
-      "Director": "Zack Snyder",
+      "director_id": 6,
       "Genre": "Action-Adventure",
       "Synopsis": "United States, 1980s, the Cold War is at its height, and superheroes, once admired, are now persecuted by the law. One day one of them, The Comedian, who worked for the CIA, turns up dead.",
       "Poster": "https://m.media-amazon.com/images/I/516NcoJgvFL._AC_.jpg",
@@ -81,7 +81,7 @@
       "id": 7,
       "Title": "Side Effects",
       "Year": "2013",
-      "Director": "Steven Soderbergh",
+      "director_id": 7,
       "Genre": "Suspense-Drama",
       "Synopsis": "Emily is a young woman who becomes addicted to a new drug prescribed by her psychiatrist to control the anxiety she suffers from her husband's imminent release from prison",
       "Poster": "https://m.media-amazon.com/images/M/MV5BMTc2MzY0NDAwOF5BMl5BanBnXkFtZTcwMTE1Mzc4OA@@._V1_.jpg",
@@ -92,7 +92,7 @@
       "id": 8,
       "Title": "John Wick",
       "Year": "2014",
-      "Director": "Chad Stahelski",
+      "director_id": 8,
       "Genre": "Action",
       "Synopsis": "John Wick, a former hitman, is confronted by mobster Viggo Tarazov, who offers a reward to whoever manages to end Wick's life.",
       "Poster": "https://http2.mlstatic.com/D_NQ_NP_637824-MLA40163107899_122019-O.jpg",
@@ -103,12 +103,86 @@
       "id": 9,
       "Title": "Numb",
       "Year": "2009",
-      "Director": "Jason Goode",
+      "director_id": 9,
       "Genre": "Drama",
       "Synopsis": "A chronically depressed screenwriter desperately tries to cure his condition when he meets the girl of his dreams.",
       "Poster": "https://pics.filmaffinity.com/Numb-377509483-large.jpg",
       "Trailer": "https://www.youtube.com/embed/-78EZfaxow0",
       "Cast": "Matthew Perry, Lynn Collins, Kevin Pollak"
+    }
+  ],
+
+  "directors": [
+    {
+      "id": 0,
+      "name": "John Hughes",
+      "birth":"February 18, 1950",
+      "country":"United States",
+      "picture":"https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/John_Hughes_Home_Alone_2.jpg/220px-John_Hughes_Home_Alone_2.jpg"
+
+    },
+    {
+      "id": 1,
+      "name": "Steven Spielberg",
+      "birth":"December 18, 1946 ",
+      "country":"United States",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Steven_Spielberg_by_Gage_Skidmore.jpg/220px-Steven_Spielberg_by_Gage_Skidmore.jpg"
+    },
+    {
+      "id": 2,
+      "name": "David Lynch",
+      "birth":"January 20, 1946 ",
+      "country":"United States",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/David_Lynch_Cannes_2017.jpg/200px-David_Lynch_Cannes_2017.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Wong Kar-wai",
+      "birth":"17 July 1958",
+      "country":"China",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Wong_Kar-wai_Berlin_cropped.jpg/220px-Wong_Kar-wai_Berlin_cropped.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Ridley Scott",
+      "birth":"30 November 1937",
+      "country":"England",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/NASA_Journey_to_Mars_and_%E2%80%9CThe_Martian%22_%28201508180030HQ%29.jpg/220px-NASA_Journey_to_Mars_and_%E2%80%9CThe_Martian%22_%28201508180030HQ%29.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Jerry Zucker",
+      "birth":"March 11, 1950",
+      "country":"United States",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Jerry_Zucker_%28cropped%29.jpg/220px-Jerry_Zucker_%28cropped%29.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Zack Snyder",
+      "birth":"March 1, 1966",
+      "country":"United States",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Zack_Snyder_by_Gage_Skidmore_2.jpg/220px-Zack_Snyder_by_Gage_Skidmore_2.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Steven Soderbergh",
+      "birth":"January 14, 1963 ",
+      "country":"United States",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Steven_Soderbergh_66%C3%A8me_Festival_de_Venise_%28Mostra%29.jpg/220px-Steven_Soderbergh_66%C3%A8me_Festival_de_Venise_%28Mostra%29.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Chad Stahelski",
+      "birth":"September 20, 1968",
+      "country":"United States",
+      "picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Chad_Stahelski.jpg/220px-Chad_Stahelski.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Jason Goode",
+      "birth":"6 de octubre de 1975",
+      "country":"United States",
+      "picture":"https://m.media-amazon.com/images/M/MV5BNGQ4NGY2ZmMtNTZlZS00OWU1LWJlZDAtOTJlOGY5MTU5YjkxXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_UY317_CR120,0,214,317_AL_.jpg"
     }
   ]
 }

@@ -27,10 +27,22 @@ def remove_repeats(list):
 db = open('data.json')
 data = json.load(db)
 movies = data['movies']
+directors = data['directors']
 
 @app.route("/",methods=["GET"])
 def front_page():
     return jsonify(movies[-10:]), HTTPStatus.OK
+
+@app.route("/directors",methods=["GET"])
+def return_directors():
+    return jsonify(directors)
+
+@app.route("/directors/<id>",methods=["GET"])
+def return_director_by_id(id):
+    for director in directors:
+        if director["id"] == int(id):
+            return jsonify(director), HTTPStatus.OK
+    return jsonify({}), HTTPStatus.NOT_FOUND
 
 @app.route("/movies",methods=["GET"])
 def return_movies():
