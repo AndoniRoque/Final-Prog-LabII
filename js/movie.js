@@ -5,7 +5,7 @@ const id = urlParams.get('id')
 fetch('http://127.0.0.1:5000/movies/'+id)
     .then(response => response.json())
     .then (movie => {
-        fetch('http://127.0.0.1:5000/directors/'+movie.id)
+        fetch('http://127.0.0.1:5000/directors/'+movie.director_id)
         .then(response => response.json())
         .then (director => {
             let element = document.getElementById('movie')
