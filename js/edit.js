@@ -37,7 +37,6 @@ btn_up.addEventListener('click', event =>{
         .catch( error => alert(error))
         .then(datos =>{
             console.log(datos);
-            // btn_up.click(event);
         })
 
 })
@@ -80,22 +79,14 @@ btn_ed.addEventListener('click', event =>{
             console.log(movies);
             data = movies
 
-        // localStorage.setItem('movie_list', JSON.stringify(movies));
-
     let movie_edit = movies.filter( movie => movie.id == newId);
     let idEdit = movie_edit[0].id;
 
-    console.log("url del enpoint = ", `http://127.0.0.1:5000/movies/edit/${idEdit}`);
-    
     fetch(`http://127.0.0.1:5000/movies/edit/${idEdit}`, requestOptions)
         .then( resp => resp.json())
         .catch( error => alert(error))
         .then( data =>{
             console.log("Data is: ", data);
         })
-    
     })
-   
-
-    
 })

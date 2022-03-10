@@ -183,7 +183,6 @@
     text-align: center;
 }
 
-
 .poster {
     animation: fadeInPoster 5s;
     height: auto;
@@ -204,7 +203,8 @@
     flex: 2;
 }
 
-.poster_main {
+.poster_main img {
+    width: 330px;
     display: flex;
     height: auto;
     width: 330px;
@@ -213,17 +213,10 @@
     border: var(--color--background2) solid 8px;
 }
 
-.poster_main img {
-    width: 330px;
-}
-
-.poster_main:hover{
-    width: 335px;
-    box-shadow: 0px 0px 10px var(--color--headbackground);
-}
 .poster_main img:hover{
     width: 335px;
     cursor: pointer;
+    box-shadow: 0px 0px 10px var(--color--headbackground);
 }
 
 .movie_info{
@@ -378,4 +371,25 @@ label {
     margin-left: 10%;
     margin-top: 2%;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.footer p {
+    color: var(--color--headbackground);
+}
+
+.names a {
+    color: white;
+    font-size: large;
+    margin: 5px;
+}
+
+.names a:hover{
+    color: var(--color--borders2);
 }
