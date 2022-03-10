@@ -33,6 +33,11 @@ directors = data['directors']
 def front_page():
     return jsonify(movies[-10:]), HTTPStatus.OK
 
+@app.route("/genres", methods=["GET"])
+def genres():
+    genres = [g['Genre'] for g in movies]
+    return jsonify(remove_repeats(genres))
+
 @app.route("/directors",methods=["GET"])
 def return_directors():
     return jsonify(directors)
@@ -59,11 +64,6 @@ def return_movie_by_id(id):
             return jsonify(movie), HTTPStatus.OK
     return jsonify({}), HTTPStatus.NOT_FOUND
 
-@app.route("/movies/list/<string:dir_gr>", methods=["GET"])
-def genres_directors(dir_gr):
-    return jsonify(list_of_values(dir_gr))
-
-
 @app.route("/movies", methods=["POST"])
 def create_movie():
     new_movie = request.get_json()
@@ -85,8 +85,6 @@ def create_movie():
             return jsonify({}), HTTPStatus.OK
     else:
         return jsonify({}), HTTPStatus.BAD_REQUEST
-
-
 
 @app.route("/movies/<id>", methods=["DELETE"])
 def delete_movie(id):
@@ -128,7 +126,6 @@ def edit_info(id):
             "Poster": info["Poster"]
         }
         return jsonify({}), HTTPStatus.OK
-
 
 
 app.run()
