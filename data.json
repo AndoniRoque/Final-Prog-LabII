@@ -109,6 +109,17 @@
       "Poster": "https://pics.filmaffinity.com/Numb-377509483-large.jpg",
       "Trailer": "https://www.youtube.com/embed/-78EZfaxow0",
       "Cast": "Matthew Perry, Lynn Collins, Kevin Pollak"
+    },
+    {
+      "id": 10,
+      "Title": "Ready Player One",
+      "Year": "2018",
+      "director_id": 1,
+      "Genre": "Sci-Fi",
+      "Synopsis":"Year 2045: Teenager Wade Watts is just one of millions of people who escape from the bleak real world to plunge into a utopian virtual world where anything is possible.",
+      "Poster": "https://i0.wp.com/noescinetodoloquereluce.com/wp-content/uploads/2018/03/ready_player_one.jpg?ssl=1",
+      "Trailer": "https://www.youtube.com/embed/cSp1dM2Vj48",
+      "Cast": "Tye Sheridan, Olivia Cooke, Ben Mendelsohn"
     }
   ],
 
