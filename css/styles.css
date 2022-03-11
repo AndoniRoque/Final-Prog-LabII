@@ -281,7 +281,20 @@ a:link, a:visited,  a:hover, a:active
     background-color: var(--color--redseparator);
     border: var(--color--redseparator);
     border-radius: 100%;
+}
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#del_btn:hover {
+    color: var(--color--headbackground);
+    background-color: var(--color--redseparator);
+    font-size: small;
+    font-weight: bolder;
 }
 
 .btns {
