@@ -63,17 +63,16 @@ def return_movie_by_id(id):
 def genres_directors(dir_gr):
     return jsonify(list_of_values(dir_gr))
 
-
 @app.route("/movies", methods=["POST"])
 def create_movie():
     new_movie = request.get_json()
-    last_id = [x['id'] for x in movies]
-    new_id = max(last_id) + 1
-    titles = [t['Title'] for t in movies]
 
-    if new_movie["Title"] not in titles:
-        if "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" in new_movie:
-            movies.append({
+    if "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" in new_movie:
+        new_id = movies[-1]['id'] + 1
+        titles = [t['Title'] for t in movies]
+
+        if new_movie["Title"] not in titles:
+            movie = {
                 "Title" : new_movie["Title"],
                 "Year" : new_movie["Year"],
                 "Director": new_movie["Director"],
@@ -81,8 +80,9 @@ def create_movie():
                 "Synopsis": new_movie["Synopsis"],
                 "id": new_id,
                 "Poster": new_movie["Poster"]
-            })
-            return jsonify({}), HTTPStatus.OK
+            }
+            movies.append(movie)
+            return jsonify(movie), HTTPStatus.OK
     else:
         return jsonify({}), HTTPStatus.BAD_REQUEST
 
@@ -130,5 +130,7 @@ def edit_info(id):
         return jsonify({}), HTTPStatus.OK
 
 
-
 app.run()
+
+
+# /directors/director_id/movies
