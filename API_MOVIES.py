@@ -61,7 +61,7 @@ def return_movie_by_id(id):
 def create_movie():
     new_movie = request.get_json()
 
-    if "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" in new_movie:
+    if "Title" and "Year" and "director_id" and "Genre" and "Synopsis" and "Poster" and "Cast" in new_movie:
         new_id = movies[-1]['id'] + 1
         titles = [t['Title'] for t in movies]
 
@@ -69,11 +69,14 @@ def create_movie():
             movie = {
                 "Title" : new_movie["Title"],
                 "Year": new_movie["Year"],
-                "Director": new_movie["Director"],
+                "director_id": new_movie["director_id"],
                 "Genre": new_movie["Genre"],
                 "Synopsis": new_movie["Synopsis"],
                 "id": new_id,
-                "Poster": new_movie["Poster"]
+                "Poster": new_movie["Poster"],
+                "Cast": new_movie["Cast"],
+                "Trailer": new_movie["Trailer"],
+                "Opinion": new_movie["Opinion"]
             }
             movies.append(movie)
             return jsonify(movie), HTTPStatus.OK

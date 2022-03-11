@@ -1,3 +1,5 @@
+let directors = [];
+
 fetch('http://127.0.0.1:5000/')
     .then( res => res.json())
     .then( movies => {
@@ -17,34 +19,51 @@ fetch('http://127.0.0.1:5000/')
         }
     })
 
+fetch('http://127.0.0.1:5000/directors')
+    .then( res => res.json())
+    .then( _directors => {
+        directors = _directors;
+    
+
 fetch('http://127.0.0.1:5000/movies/random')
     .then( res => res.json())
     .then( movies => {
 
         for (let i=0; i < movies.length; i++){
+            const movie = movies[i]
             let cont = document.getElementById('titles');
+
+            const director = directors.filter(_director => {
+                return _director.id == movie.director_id
+            })[0]
+
             cont.innerHTML +=
                 `<div class="movie_info">
                     <div class="poster_main">
-                        <a href="./movie.html?id=${movies[i].id}">
-                            <img src=${movies[i].Poster}>
+                        <a href="./movie.html?id=${movie.id}">
+                            <img src=${movie.Poster}>
                         </a>
                     </div>
-                    <div class="tech_file" onclick="redirect(${movies[i].id})">
-                        <a href="./movie.html?id=${movies[i].id}">
-                            <p> <strong> Title: </strong>${movies[i].Title}</p>
-                            <p> <b> Director: </b> ${movies[i].Director} </p>
-                            <p> <b> Year: </b> ${movies[i].Year}</p>
-                            <p> <b> Synopsis: </b> ${movies[i].Synopsis}</p>
+                    <div class="tech_file" onclick="redirect(${movie.id})">
+                        <a href="./movie.html?id=${movie.id}">
+                            <p class="hide"> <strong> Title: </strong>${movie.Title}</p>
+                            <p> <b> Director: </b> ${director.name} </p>
+                            <p> <b> Year: </b> ${movie.Year}</p>
+                            <p> <b> Synopsis: </b> ${movie.Synopsis}</p>
                         </a>
                     </div>
                 </div>
                 <hr class="separator">`
         }
     })
+})
 
-=======
->>>>>>> be258a09fd9e79f0f9259c38baa7c575c3c58886
+var upload_btn = document.getElementById('up_btn');
+
+upload_btn.addEventListener('click', event => {
+    location.href="./edit.html";
+})
+
 function latest_added(title, year, poster){
 
     let cont = document.createElement('div');

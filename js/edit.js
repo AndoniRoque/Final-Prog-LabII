@@ -21,7 +21,7 @@ btn_up.addEventListener('click', event =>{
     let newMovie = {
         Title: newTitle, 
         Year: newYear,
-        Director: id_director(newDirector),
+        director_id: id_director(newDirector),
         Genre: newGenre,
         Synopsis: newSynopsis,
         Poster: newPoster,
@@ -29,9 +29,7 @@ btn_up.addEventListener('click', event =>{
         Cast: newCast,
         Opinion: newOp
     }
-    
-    console.log(newMovie);
-    
+        
     let requestOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
