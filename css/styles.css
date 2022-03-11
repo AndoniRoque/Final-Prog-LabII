@@ -100,8 +100,13 @@
 
 .search_btn:active{
     transition: 0s;
-
     box-shadow: 0px 0px 0px;
+}
+
+.new_movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .header {
@@ -251,7 +256,6 @@ a:link, a:visited,  a:hover, a:active
     
 }
 
-
 .tech_file_genre {
     display: flex;
     flex-direction: row;
@@ -270,7 +274,6 @@ a:link, a:visited,  a:hover, a:active
     box-shadow: 1px 1px 10px var(--color--headbackground);
     margin: 20px;
 }
-
 
 .separator {
     height: 5px;
@@ -378,6 +381,8 @@ label {
     flex-direction: row;
     justify-content: space-around;
     align-content: center;
+    margin-top: 5px;
+    border-top: 5px solid var(--color--borders);
 }
 
 .footer p {
@@ -393,3 +398,4 @@ label {
 .names a:hover{
     color: var(--color--borders2);
 }
+
