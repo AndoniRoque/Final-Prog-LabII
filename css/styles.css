@@ -219,7 +219,6 @@
 }
 
 .poster_main img:hover{
-    width: 335px;
     cursor: pointer;
     box-shadow: 0px 0px 10px var(--color--headbackground);
 }
@@ -332,8 +331,9 @@ a:link, a:visited,  a:hover, a:active
     border-radius: 30px;
     width: 50%;
     margin-top: 5%;
+    margin-bottom: 5%;
     padding-bottom: 3px;
-    height: 550px;
+    height: 775px;
     box-shadow: 2px 3px 3px var(--color--borders3);
 }
 

@@ -14,17 +14,23 @@ btn_up.addEventListener('click', event =>{
     let newGenre = select_g.options[select_g.selectedIndex].value;
     let newSynopsis = inputs[2].value;
     let newPoster = inputs[3].value;
+    let newURL = inputs[4].value;
+    let newCast = inputs[5].value;
+    let newOp = inputs[6].value;
     
     let newMovie = {
         Title: newTitle, 
-        Director: newDirector,
         Year: newYear,
+        Director: id_director(newDirector),
         Genre: newGenre,
         Synopsis: newSynopsis,
-        Poster: newPoster
+        Poster: newPoster,
+        Trailer: newURL,
+        Cast: newCast,
+        Opinion: newOp
     }
     
-    // console.log(newMovie);
+    console.log(newMovie);
     
     let requestOptions = {
         method: 'POST',
@@ -37,6 +43,7 @@ btn_up.addEventListener('click', event =>{
         .catch( error => alert(error))
         .then(datos =>{
             console.log(datos);
+            alert("New movie uploaded successfuly");
         })
 
 })
@@ -59,7 +66,7 @@ btn_ed.addEventListener('click', event =>{
 
     let edit_movie = {
         Title: newTitle,
-        Director: newDirector,
+        Director: id_director(newDirector),
         Year: newYear,
         Genre: newGenre,
         Synopsis: newSynopsis,
@@ -90,3 +97,36 @@ btn_ed.addEventListener('click', event =>{
         })
     })
 })
+
+function id_director(director){
+    if (director == "John Hughes") {
+        return 0;
+    }
+    else if (director == "Steven Spielberg") {
+        return 1;
+    }
+    else if (director == "David Lynch") {
+        return 2;
+    }
+    else if (director == "Wong Kar-Wai") {
+        return 3;
+    }
+    else if (director == "Ridley Scott") {
+        return 4;
+    }
+    else if (director == "Jerry Zucker") {
+        return 5;
+    }
+    else if (director == "Zack Snyder") {
+        return 6;
+    }
+    else if (director == "Steven Soderbergh") {
+        return 7;
+    }
+    else if (director == "Chad Stahelski") {
+        return 8;
+    }
+    else if (director == "Jason Goode") {
+        return 9;
+    } 
+}
