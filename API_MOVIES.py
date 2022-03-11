@@ -7,22 +7,12 @@ import random
 app = Flask(__name__)
 CORS(app)
 
-def list_of_values(text):
-    if text == "Synopsis" or "synopsis" or "SYNOPSIS" or text[-1] != "s":
-        list = [l[text.capitalize()] for l in movies]
-        return remove_repeats(list)
-    else:
-        remove_s = text[:-1]
-        list = [l[remove_s.capitalize()] for l in movies]
-        return remove_repeats(list)
-
 def remove_repeats(list):
     new_list = []
     for elem in list:
         if elem not in new_list:
             new_list.append(elem)
     return new_list
-
 
 db = open('data.json')
 data = json.load(db)
@@ -55,7 +45,10 @@ def return_movies():
 
 @app.route("/movies/random",methods=["GET"])
 def return_movies_random():
-    return jsonify(random.sample(movies, 6))
+    sample = int(len(movies) / 2) + 1
+    if sample <= 1:
+        sample = len(movies)
+    return jsonify(random.sample(movies, sample))
 
 @app.route("/movies/<id>",methods=["GET"])
 def return_movie_by_id(id):
@@ -75,7 +68,7 @@ def create_movie():
         if "Title" and "Year" and "Director" and "Genre" and "Synopsis" and "Poster" in new_movie:
             movies.append({
                 "Title" : new_movie["Title"],
-                "Year" : new_movie["Year"],
+                "Year": new_movie["Year"],
                 "Director": new_movie["Director"],
                 "Genre": new_movie["Genre"],
                 "Synopsis": new_movie["Synopsis"],
