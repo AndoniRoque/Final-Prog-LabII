@@ -8,7 +8,6 @@ fetch('http://127.0.0.1:5000/')
         while (pos >= 0){
             i++;
             if (i <= 10){
-                // console.log(movies[pos].id);
                 latest_added(movies[pos].Title, movies[pos].Year, movies[pos].Poster);
                 pos = pos - 1;
             }
@@ -44,14 +43,16 @@ fetch('http://127.0.0.1:5000/movies/random')
         }
     })
 
+<<<<<<< HEAD
 var upload_btn = document.getElementById('up_btn');
 
 upload_btn.addEventListener('click', event =>{
     location.href="./edit.html";
 })
 
+=======
+>>>>>>> be258a09fd9e79f0f9259c38baa7c575c3c58886
 function latest_added(title, year, poster){
-    // console.log("Pelicula: ", title, " del año ", year, ". URL: ", poster);
 
     let cont = document.createElement('div');
     cont.classList.add('latest_added');
