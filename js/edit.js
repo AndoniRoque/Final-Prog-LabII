@@ -1,3 +1,7 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const id = urlParams.get('id')
+
 var btn_up = document.getElementById('upload');
 var btn_ed = document.getElementById('edit');
 
@@ -46,10 +50,11 @@ btn_up.addEventListener('click', event =>{
 
 })
 
-let newId = 0;
+let newId = id;
 
 btn_ed.addEventListener('click', event =>{
     event.preventDefault();
+
     let formData = document.getElementById('formData');
     let inputs = formData.getElementsByTagName('input');
     let select_d = document.getElementById('director');

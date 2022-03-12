@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf2ea1d8-e4b0-492f-8bf4-0b1bb16b698f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API_MOVIES.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_MOVIES.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/director.html" beforeDir="false" afterPath="$PROJECT_DIR$/director.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/genres.html" beforeDir="false" afterPath="$PROJECT_DIR$/genres.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/genre.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/genre.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies.html" afterDir="false" />
-    </list>
+    <list default="true" id="cf2ea1d8-e4b0-492f-8bf4-0b1bb16b698f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
