@@ -32,6 +32,11 @@ def genres():
 def return_directors():
     return jsonify(directors)
 
+@app.route("/directors/<id>/movies",methods =["GET"])
+def return_movies_by_director(id):
+    movies_by_director = list(filter(lambda m: m['director_id'] == int(id), movies))
+    return jsonify(movies_by_director), HTTPStatus.OK
+
 @app.route("/directors/<id>",methods=["GET"])
 def return_director_by_id(id):
     for director in directors:
@@ -126,6 +131,3 @@ def edit_info(id):
 
 
 app.run()
-
-
-# /directors/director_id/movies

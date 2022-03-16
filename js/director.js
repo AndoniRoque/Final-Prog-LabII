@@ -18,3 +18,13 @@ fetch('http://127.0.0.1:5000/directors/'+id)
             </div>
         `;
 })
+
+fetch('http://127.0.0.1:5000/directors/'+id+'/movies')
+    .then(response => response.json())
+    .then (data => {
+        data.forEach(movie => {
+            let movies_by_director = document.getElementById("movies_by_director")
+            movies_by_director.innerHTML +=`
+                <p>${movie.Title}</p>`
+            })
+    })
