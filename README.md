@@ -20,4 +20,4 @@ by Juan Manuel Fullana & Andoni Roque
     Tendriamos que tomar el id del usuario que esta logueado en ese momento, el id del usuario que realizó el comentario o los comentarios ( que podrian ser de multiples usuarios, includio quien esta logueado, por lo que habria que hacer alguna que otra excepcion para la logica del chequeo), realizar una comparación y en caso de ser el mismo permitir la edición o la eliminación tanto de un comentario como de una pelicula.
     Si bien es parte de la actividad, y aprendimos muchisimo por nuestra cuenta (en base a necesidad para la implementacion de ciertas funcionalidades del sitio y de otras, como la documentacion de postman, por dar un ejemplo), consideramos que el sistema de comentarios es algo para lo cual nos faltan algunos conocimientos basicos fundamentales.
 
-    4) Sistema de busqueda
+    4) Sistema de busqueda.

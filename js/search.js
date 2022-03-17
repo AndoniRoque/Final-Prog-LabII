@@ -1,3 +1,7 @@
+// For some reason this isn't working as intended. 
+// The search selector (Movies, Directors, Genres) sets itself as the site loads
+// and it doesn't update itself when the user picks a different option.
+// There's a workaround in Mozilla Fierfox but it's less than ideal.
 fetch('http://127.0.0.1:5000/movies')
     .then( res => res.json())
     .then(movies => {

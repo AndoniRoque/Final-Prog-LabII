@@ -7,6 +7,7 @@ import random
 app = Flask(__name__)
 CORS(app)
 
+
 def remove_repeats(list):
     new_list = []
     for elem in list:
@@ -14,28 +15,34 @@ def remove_repeats(list):
             new_list.append(elem)
     return new_list
 
+
 db = open('data.json')
 data = json.load(db)
 movies = data['movies']
 directors = data['directors']
 
+
 @app.route("/",methods=["GET"])
 def front_page():
     return jsonify(movies[-10:]), HTTPStatus.OK
+
 
 @app.route("/genres", methods=["GET"])
 def genres():
     genres = [g['Genre'] for g in movies]
     return jsonify(remove_repeats(genres))
 
+
 @app.route("/directors",methods=["GET"])
 def return_directors():
     return jsonify(directors)
+
 
 @app.route("/directors/<id>/movies",methods =["GET"])
 def return_movies_by_director(id):
     movies_by_director = list(filter(lambda m: m['director_id'] == int(id), movies))
     return jsonify(movies_by_director), HTTPStatus.OK
+
 
 @app.route("/directors/<id>",methods=["GET"])
 def return_director_by_id(id):
@@ -44,9 +51,11 @@ def return_director_by_id(id):
             return jsonify(director), HTTPStatus.OK
     return jsonify({}), HTTPStatus.NOT_FOUND
 
+
 @app.route("/movies",methods=["GET"])
 def return_movies():
     return jsonify(movies)
+
 
 @app.route("/movies/random",methods=["GET"])
 def return_movies_random():
@@ -55,6 +64,7 @@ def return_movies_random():
         sample = len(movies)
     return jsonify(random.sample(movies, sample))
 
+
 @app.route("/movies/<id>",methods=["GET"])
 def return_movie_by_id(id):
     for movie in movies:
@@ -62,10 +72,10 @@ def return_movie_by_id(id):
             return jsonify(movie), HTTPStatus.OK
     return jsonify({}), HTTPStatus.NOT_FOUND
 
+
 @app.route("/movies", methods=["POST"])
 def create_movie():
     new_movie = request.get_json()
-
     if "Title" and "Year" and "director_id" and "Genre" and "Synopsis" and "Poster" and "Cast" in new_movie:
         new_id = movies[-1]['id'] + 1
         titles = [t['Title'] for t in movies]
@@ -88,6 +98,7 @@ def create_movie():
     else:
         return jsonify({}), HTTPStatus.BAD_REQUEST
 
+
 @app.route("/movies/<id>", methods=["DELETE"])
 def delete_movie(id):
     i = 0
@@ -98,7 +109,6 @@ def delete_movie(id):
             movies.pop(i)
             deleted = True
         i += 1
-
     if deleted:
         return jsonify({}), HTTPStatus.OK
     else:

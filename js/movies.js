@@ -1,5 +1,6 @@
 let directors = [];
 
+// Display the last 10 movies uploaded to the site on a side bar
 fetch('http://127.0.0.1:5000/')
     .then( res => res.json())
     .then( movies => {
@@ -24,7 +25,7 @@ fetch('http://127.0.0.1:5000/directors')
     .then( _directors => {
         directors = _directors;
     
-
+// Displays a random selection of movies to show on the main site
 fetch('http://127.0.0.1:5000/movies/random')
     .then( res => res.json())
     .then( movies => {
