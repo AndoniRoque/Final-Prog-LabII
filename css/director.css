@@ -1,3 +1,83 @@
-#movies_by_director {
-    background-color: red;
+:root{
+    --color--background: rgb(13, 100, 107);
+    --color--headbackground: rgb(255, 210, 181);
+    --color--borders: rgb(62, 72, 64);
+    --color--borders2: rgb(99, 56, 16);
+    --color--borders3: rgb(186, 142, 115);
+    --color--background2: rgb(22, 56, 58);
+    --color--redseparator: rgb(92, 42, 9);
+}
+@media (min-width:500px){
+    .info_box{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgb(255, 210, 181);
+        margin-left: 5px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 18px;
+        max-width: 215px;
+
+    }
+
+    .movies_by_director_box {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        color: var(--color--headbackground);
+        text-decoration: underline;
+        width: 90ch;
+    }
+
+    .movies_by_director_box p {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: black;
+        font-weight: bold;
+        background-color: var(--color--headbackground);
+        margin-right: 10px;
+        margin-top: 10px;
+        padding-left: 10px;
+        border: var(--color--borders3) solid 5px;
+        align-items: flex-start;
+        width: 50%;
+        box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+    }
+}
+@media (max-width:500px){
+    .info_box{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgb(255, 210, 181);
+        margin-left: 5px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 18px;
+        max-width: 215px;
+    }
+    .movies_by_director_box {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        color: var(--color--headbackground);
+        text-decoration: underline;
+        width: 90ch;
+    }
+
+    .movies_by_director_box p {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: black;
+        font-weight: bold;
+        background-color: var(--color--headbackground);
+        margin-right: 10px;
+        margin-top: 10px;
+        padding-left: 10px;
+        border: var(--color--borders3) solid 5px;
+        align-items: flex-start;
+        width: 50%;
+        box-shadow: 5px 5px 5px rgb(0,0,0,0.5);
+    }
 }

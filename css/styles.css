@@ -2,7 +2,7 @@
     --color--background: rgb(13, 100, 107);
     --color--headbackground: rgb(255, 210, 181);
     --color--borders: rgb(62, 72, 64);
-    --color--borders2: rgb(226, 120, 18);
+    --color--borders2: rgb(99, 56, 16);
     --color--borders3: rgb(186, 142, 115);
     --color--background2: rgb(22, 56, 58);
     --color--redseparator: rgb(92, 42, 9);
@@ -345,7 +345,7 @@ a:link, a:visited,  a:hover, a:active
     margin-top: 5%;
     margin-bottom: 5%;
     padding-bottom: 3px;
-    height: 775px;
+    height: 80%;
     box-shadow: 2px 3px 3px var(--color--borders3);
 }
 
@@ -423,4 +423,3 @@ label {
 .names a:hover{
     color: var(--color--borders2);
 }
-
