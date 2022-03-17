@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf2ea1d8-e4b0-492f-8bf4-0b1bb16b698f" name="Default Changelist" comment="" />
+    <list default="true" id="cf2ea1d8-e4b0-492f-8bf4-0b1bb16b698f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/director.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/director.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/movie.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/movie.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/directors.html" beforeDir="false" afterPath="$PROJECT_DIR$/directors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/director.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/director.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movies.html" beforeDir="false" afterPath="$PROJECT_DIR$/movies.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
