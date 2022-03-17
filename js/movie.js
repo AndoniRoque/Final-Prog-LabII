@@ -2,6 +2,9 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id')
 
+//Creates part of the "movie.html" body, so we don't need one html per movie
+//Also gets the id from the director, so we don't need one html per director
+
 fetch('http://127.0.0.1:5000/movies/'+id)
     .then(response => response.json())
     .then (movie => {

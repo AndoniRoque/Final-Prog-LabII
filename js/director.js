@@ -1,3 +1,5 @@
+//Gets the id from the poster
+
 queryString = window.location.search;
 urlParams = new URLSearchParams(queryString);
 id = urlParams.get('id')

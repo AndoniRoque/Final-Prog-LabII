@@ -1,3 +1,5 @@
+// Users "Data base"
+
 var users = [
 	{
 		id: "0",
@@ -21,6 +23,8 @@ var users = [
 	}
 ]
 
+//Login system
+
 function getInfo() {
 	var username = document.getElementById('username').value
 	var password = document.getElementById('password').value
@@ -33,6 +37,7 @@ function getInfo() {
 	}
 	console.log("incorrect username or password")
 }
+//Creates the public mode with the 10 latest added movies
 
   fetch('http://127.0.0.1:5000/')
            .then( response => response.json())
