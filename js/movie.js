@@ -28,7 +28,7 @@ fetch('http://127.0.0.1:5000/movies/'+id)
                 <p>${movie.Genre}</p>
                 <p>${movie.Synopsis}</p>
                 <p>${movie.Cast}</p>
-                <p>${movie.Opinion}</p>
+                <p>Opinion:${movie.Opinion}</p>
             `;
             let edit_btn = document.getElementById('edit_btn');
 
@@ -57,4 +57,3 @@ fetch('http://127.0.0.1:5000/movies/'+id)
             })
         })
     })
-
